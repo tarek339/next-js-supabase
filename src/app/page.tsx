@@ -13,9 +13,10 @@ export default async function Home() {
     cookies: () => cookies(),
   });
 
-  // * to update the new email or any changes
+  //  to update the new email or any changes
   // * refresh session is necessary
-  // * otherwise the user has to sign out and back in to create a new session
+  //  otherwise the user has to sign out and back in to create a new session
+  // ? is this way right to handle the function?
   await supabase.auth.refreshSession();
 
   return (

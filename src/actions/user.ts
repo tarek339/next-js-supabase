@@ -127,9 +127,9 @@ export const changeEmail = async (formData: FormData) => {
     cookies: cookies,
   });
 
-  // * after submitting the new email
-  // * user will recieve an email to confirm the changes and verify the new email
-  // * the link in the email will redirect the user to the main page
+  // after submitting the new email
+  // user will recieve an email to confirm the changes and verify the new email
+  // the link in the email will redirect the user to the main page
   const { data, error } = await supabase.auth.updateUser({
     email,
   });
@@ -145,11 +145,17 @@ export const changePassword = async (formData: FormData) => {
     cookies: cookies,
   });
 
-  console.log(await supabase.auth.getUser());
+  // * before updating the new password user should confirm his old password
+  // * for that we need a function that gets the old password from db
+  // * and checks in the old password === prevPassword
+  // ! if not the funciton should return an error and stop the process
+  // esle it continues this function
+  // todo: fetch the old password from the db
+  // ? How to get the old password when passwords are encrypted and secured in the db?
+  const { data, error } = await supabase.auth.updateUser({
+    password,
+  });
 
-  // const { data, error } = await supabase.auth.updateUser({
-  //   password,
-  // });
-
-  // console.log(data);
+  console.log(data);
+  console.log(error);
 };
