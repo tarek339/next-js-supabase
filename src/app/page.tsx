@@ -13,6 +13,9 @@ export default async function Home() {
     cookies: () => cookies(),
   });
 
+  // * to update the new email or any changes
+  // * refresh session is necessary
+  // * otherwise the user has to sign out and back in to create a new session
   await supabase.auth.refreshSession();
 
   return (

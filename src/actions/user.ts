@@ -127,6 +127,9 @@ export const changeEmail = async (formData: FormData) => {
     cookies: cookies,
   });
 
+  // * after submitting the new email
+  // * user will recieve an email to confirm the changes and verify the new email
+  // * the link in the email will redirect the user to the main page
   const { data, error } = await supabase.auth.updateUser({
     email,
   });
