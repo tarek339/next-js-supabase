@@ -4,7 +4,6 @@ import { productModel } from "@/models/productModel";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 import Link from "next/link";
-import { useEffect } from "react";
 
 export default async function Home() {
   await connectToDb();

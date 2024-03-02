@@ -32,16 +32,9 @@ cookies can be expired after a time wich is setted
 localestorage not
 
 
-profile page
-1 get the cookie
-2 verify the token with jwt verify
-3 get user using user id
-4 display user
-
-
-    // cookies can be created in the server in nextjs
-    // and sent to the browser cookie storage
-    cookies().set("token", token, {
-      secure: true, // to work only on https
-      httpOnly: true, // to not read the cookie on the browser = client side
-    });
+// cookies can be created in the server in nextjs
+// and sent to the browser cookie storage
+   cookies().set("token", token, {
+    secure: true, // to work only on https
+    httpOnly: true, // to not read the cookie on the browser = client side
+  });
