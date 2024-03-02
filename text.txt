@@ -1,0 +1,47 @@
+components are server comp by default
+only server com can be async comp
+
+by adding "use client" to a comp it becomes a client comp and will be baisc react comp
+
+sepreate rest api is not nedeed because with server compontes we are connect to DB directly
+
+rest api types
+routes like /users /products
+with different methods like get post put delete....
+
+client comp are nedeed when client has to interact with buttons form etc.
+hooks and interactivities because the server does not provide these actions...
+
+server comp are renderd on the server
+client = (user wich uses the brower) comp are renderd on the browser
+if the compiler running threw a client comp it just sending the html to the brower
+and the browser will render the client comp. e.g. a button ect..
+sends as a js bundle for interactivity
+thats why CC are a bit slower then SC
+
+HOC
+for reusing logic on multiple components and multiple times
+becomes parents to compontes 
+
+server actions are functions running on the sever
+normaly used with forms
+actiosn are allways async otherwise they will not work
+
+cookies vs localestorage
+cookies can be expired after a time wich is setted
+localestorage not
+
+
+profile page
+1 get the cookie
+2 verify the token with jwt verify
+3 get user using user id
+4 display user
+
+
+    // cookies can be created in the server in nextjs
+    // and sent to the browser cookie storage
+    cookies().set("token", token, {
+      secure: true, // to work only on https
+      httpOnly: true, // to not read the cookie on the browser = client side
+    });
